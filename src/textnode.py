@@ -41,6 +41,8 @@ class TextNode:
         elif self.text_type == TextType.LINK:
             return LeafNode(tag="a", value=self.text, props={"href": self.url})
         elif self.text_type == TextType.IMAGE:
-            return LeafNode(tag="img", props={"src": self.url, "alt": self.text})
+            return LeafNode(
+                tag="img", value="", props={"src": self.url, "alt": self.text}
+            )
         else:
             raise Exception(f"{self.text_type} doesn't contain in TextType")
